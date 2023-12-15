@@ -16,6 +16,7 @@ export class WeatherController{
         console.log('weather loaded')
         AppState.on('user', this.getWeather)
         AppState.on('Weather',_drawWeather)
+        this.currentTime()
         setInterval(this.currentTime, 15000)
     }
 

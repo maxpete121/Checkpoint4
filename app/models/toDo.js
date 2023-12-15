@@ -11,12 +11,28 @@ export class ToDoList{
 
     get toDoTemplate(){
         return`
-        <div class="d-flex justify-content-evenly bg-light mb-2 p-2">
+        <div style="background-color: ${this.toDoCompleteTemp};" class="d-flex justify-content-evenly mb-2 p-2">
         <div class="w-25">${this.description}</div>
-        <button onclick="app.ToDoController.completeToDo('${this.id}')" class="btn btn-outline-dark">Complete</button>
+        <button onclick="app.ToDoController.completeToDo('${this.id}')" class="btn btn-outline-dark">${this.toDoCompleteButton}</button>
         <button onclick="app.ToDoController.deleteToDo('${this.id}')" class="btn btn-outline-dark">Delete</button>
         </div>
         `
+    }
+
+    get toDoCompleteTemp(){
+        if(this.completed == true){
+            return `green`
+        }else if(this.completed == false){
+            return`white`
+        }
+    }
+
+    get toDoCompleteButton(){
+        if(this.completed == true){
+            return `Finished`
+        }else if(this.completed == false){
+            return`Complete`
+        }
     }
 
 }
@@ -41,6 +57,10 @@ export class Weather{
         <h5 class="me-2">Temperature:</h5>
         <h5>${this.weatherConvert}</h5>
         <h5>°F</h5>
+        </div>
+        <div class="d-flex">
+        <h5 class="me-2">Sky:</h5>
+        <h5>${this.weather[0].main}</h5>
         </div>
         </div>
         `

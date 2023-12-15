@@ -25,7 +25,7 @@ class ToDoService{
         let completeToDo = AppState.ToDos.find(todo => todo.id == toDoId)
         completeToDo.completed = true
         const response = await api.put(`api/todos/${toDoId}`, completeToDo)
-        console.log(response)
+        AppState.emit('ToDos')
     }
 
     async deleteToDo(toDoId){

@@ -16,7 +16,6 @@ export class ToDoController{
     constructor(){
         console.log('to do loaded')
         AppState.on('user', this.getToDo)
-        this.currentTime()
         AppState.on('ToDos', _drawToDo)
     }
 
