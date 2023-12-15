@@ -33,6 +33,10 @@ class ToDoService{
         let toDoDelete = AppState.ToDos.findIndex(todo => todo.id == toDoId)
         AppState.ToDos.splice(toDoDelete, 1)
     }
+
+    async toDoCount(){
+
+    }
 }
 
 

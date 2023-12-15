@@ -8,4 +8,6 @@ export class Background{
         this.author = data.author
         this.largeImgUrl = data.largeImgUrl
     }
+    
+    
 }

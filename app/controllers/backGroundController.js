@@ -5,8 +5,10 @@ import { Background } from "../models/Background.js";
 
 function _drawBackground(){
     let currentBg = AppState.background
+    console.log(currentBg)
     let imgUrl = currentBg.largeImgUrl
     document.getElementById('background-plug').style.backgroundImage= `url('${imgUrl}')`
+    document.getElementById('bg-author').innerText = currentBg.author
 }
 
 

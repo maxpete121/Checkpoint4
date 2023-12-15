@@ -7,6 +7,7 @@ class BackgroundService{
 
     async getBackground(){
         const response = await api.get('api/images')
+        // await console.log(response)
         const newBackground = response.data
         let backGround = new Background(newBackground)
         AppState.background = backGround
