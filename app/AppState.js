@@ -10,7 +10,11 @@ class ObservableAppState extends EventEmitter {
   account = null
 
   /**@type {ToDoList[]} */
-  ToDos = []
+  ToDos = [
+    new ToDoList({
+      description: 'yay'
+    })
+  ]
 
   /**@type {Weather} */
   Weather = null
