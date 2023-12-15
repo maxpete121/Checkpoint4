@@ -2,6 +2,7 @@ import { ToDoList } from './models/toDo.js'
 import { Weather } from './models/toDo.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
+import { Background } from './models/Background.js'
 
 class ObservableAppState extends EventEmitter {
 
@@ -18,6 +19,9 @@ class ObservableAppState extends EventEmitter {
 
   /**@type {Weather} */
   Weather = null
+
+  /**@type {Background} */
+  background = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

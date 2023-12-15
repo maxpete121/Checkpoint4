@@ -6,8 +6,10 @@ import { Background } from "../models/Background.js";
 class BackgroundService{
 
     async getBackground(){
-        const response = api.get('api/images')
-
+        const response = await api.get('api/images')
+        const newBackground = response.data
+        let backGround = new Background(newBackground)
+        AppState.background = backGround
     }
 }
 
