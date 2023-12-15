@@ -29,9 +29,11 @@ class ToDoService{
     }
 
     async deleteToDo(toDoId){
-        const response = await api.delete(`api/todos/${toDoId}`)
-        let toDoDelete = AppState.ToDos.findIndex(todo => todo.id == toDoId)
-        AppState.ToDos.splice(toDoDelete, 1)
+        if(window.confirm('Are you sure you want to delete this To Do?')){
+            const response = await api.delete(`api/todos/${toDoId}`)
+            let toDoDelete = AppState.ToDos.findIndex(todo => todo.id == toDoId)
+            AppState.ToDos.splice(toDoDelete, 1)
+        }
     }
 
     async toDoCount(){
