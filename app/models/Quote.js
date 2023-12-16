@@ -8,8 +8,8 @@ export class Quote{
 
     get quoteTemplate(){
         return`
-        <div class="text-light">
-        <h4>${this.author}</h4>
+        <div class="text-light hoverParent">
+        <h4 class="hoverChild">${this.author}</h4>
         <h5>${this.content}</h5>
         </div>
         

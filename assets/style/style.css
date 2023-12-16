@@ -1,12 +1,25 @@
 /* BASIC STYLES HERE */
 
-body{
+body {
     background-position: center;
     background-size: cover;
 }
 
-.cardStyle{
+
+.cardStyle {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.789);
     outline: thick solid white;
+}
+
+
+.hoverParent .hoverChild {
+    opacity: 0;
+    transition: ease-in, 1s;
+}
+
+
+.hoverParent:hover .hoverChild {
+    opacity: 1;
+    cursor: pointer;
 }
