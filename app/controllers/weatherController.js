@@ -17,12 +17,30 @@ export class WeatherController{
         AppState.on('user', this.getWeather)
         AppState.on('Weather',_drawWeather)
         this.currentTime()
-        setInterval(this.currentTime, 15000)
+        setInterval(this.currentTime, 1000)
     }
 
     async getWeather(){
         await weatherService.getWeather()
         _drawWeather()
+    }
+
+    changeFtoC(){
+        document.getElementById('temp-F').style.display = 'none'
+        document.getElementById('temp-F-tag').style.display = 'none'
+        document.getElementById('temp-C-button').style.display = 'none'
+        document.getElementById('temp-F-button').style.display = 'block'
+        document.getElementById('temp-C').style.display = 'block'
+        document.getElementById('temp-C-tag').style.display = 'block'
+    }
+
+    changeCtoF(){
+        document.getElementById('temp-C').style.display = 'none'
+        document.getElementById('temp-C-tag').style.display = 'none'
+        document.getElementById('temp-F-button').style.display = 'none'
+        document.getElementById('temp-C-button').style.display = 'block'
+        document.getElementById('temp-F').style.display = 'block'
+        document.getElementById('temp-F-tag').style.display = 'block'
     }
 
     currentTime(){

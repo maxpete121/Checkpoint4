@@ -57,8 +57,12 @@ export class Weather{
         </div>
         <div class="d-flex">
         <h5 class="me-2">Temperature:</h5>
-        <h5>${this.weatherConvert}</h5>
-        <h5>°F</h5>
+        <h5 id="temp-F">${this.weatherConvertF}</h5>
+        <h5 id="temp-F-tag" class="me-2">°F</h5>
+        <h5 id="temp-C" style="display: none;">${this.weatherConvertC}</h5>
+        <h5 id="temp-C-tag" class="me-2" style="display: none;">°C</h5>
+        <button class="btn btn-outline-light" onclick="app.WeatherController.changeFtoC()" id="temp-C-button">°C</button>
+        <button class="btn btn-outline-light" onclick="app.WeatherController.changeCtoF()" id="temp-F-button" style="display: none;">°F</button>
         </div>
         <div class="d-flex">
         <h5 class="me-2">Sky:</h5>
@@ -68,10 +72,16 @@ export class Weather{
         `
     }
 
-    get weatherConvert(){
-        let newTemp = this.main.temp
-        let converted = (newTemp - 273.15) * 1.8 + 32
-        return Math.round(converted) 
+    get weatherConvertF(){
+        let FTemp = this.main.temp
+        let convertedF = (FTemp - 273.15) * 1.8 + 32
+        return Math.round(convertedF) 
+    }
+
+    get weatherConvertC(){
+        let CTemp = this.main.temp
+        let convertedC = CTemp - 273.15
+        return Math.round(convertedC * 100) / 100
     }
 }
 
