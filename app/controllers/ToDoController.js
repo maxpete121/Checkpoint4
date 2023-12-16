@@ -13,11 +13,14 @@ function _drawToDo(){
     document.getElementById('toDo-view').innerHTML = content
 }
 
-// function _drawCount(){
-//     let count = AppState.toDoCount
-//     console.log('drawCount', count)
-//     document.getElementById('list-count-view').innerText = count
-// }
+function _drawFinished(){
+    if(AppState.FinishedToDo != undefined){
+        let finished = AppState.FinishedToDo
+        let content = ''
+        finished.forEach(todo => content += todo.toDoTemplate)
+        document.getElementById('finished-todo').innerHTML= content
+    }
+}
 
 export class ToDoController{
     constructor(){
@@ -25,6 +28,7 @@ export class ToDoController{
         AppState.on('user', this.getToDo)
         AppState.on('ToDos', this.toDoCount)
         AppState.on('ToDos', _drawToDo) 
+        AppState.on('FinishedToDo', _drawFinished)
     }
 
     
@@ -51,8 +55,9 @@ export class ToDoController{
     }
 
     toDoCount(){
-        let toDo = AppState.ToDos.length
-        document.getElementById('list-count-view').innerText = toDo
+        let unfinished = AppState.ToDos.filter(todo => todo.completed == false)
+        let count = unfinished.length
+        document.getElementById('list-count-view').innerText = count
     }
 
 }
