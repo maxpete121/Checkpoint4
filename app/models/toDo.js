@@ -50,7 +50,7 @@ export class Weather{
 
     get WeatherTemplate(){
         return`
-        <div class="bg-dark text-light p-2">
+        <div class="text-light p-2">
         <div class="d-flex">
         <h5 class="me-2">City:</h5>
         <h5>${this.name}</h5>

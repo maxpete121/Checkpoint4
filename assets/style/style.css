@@ -4,3 +4,9 @@ body{
     background-position: center;
     background-size: cover;
 }
+
+.cardStyle{
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.789);
+    outline: thick solid white;
+}

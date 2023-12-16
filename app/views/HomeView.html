@@ -1,12 +1,12 @@
-<section>
+<section class="container-fluid">
     <section class="row justify-content-center mb-4">
-        <div class="col-4 bg-dark text-light text-center p-2">
-            <h1 id="current-time">Time</h1>
+        <div class="col-2 cardStyle me-4 text-light text-center d-flex justify-content-center align-items-center p-2">
+            <h1 id="current-time">time</h1>
         </div>
-        <div class="col-2" id="weather-view"></div>
+        <div class="col-2 cardStyle ms-4" id="weather-view"></div>
     </section>
-    <section class="row">
-        <div class="col-4 bg-dark p-3 ms-4">
+    <section class="row justify-content-center">
+        <div class="col-4 cardStyle p-3 me-4">
             <div class="text-center text-light">
                 <h2>To do list</h2>
                 <div class="d-flex justify-content-center">
@@ -14,7 +14,7 @@
                     <h3 class="" id="list-count-view"></h3>
                 </div>
             </div>
-            <div class="d-flex justify-content-center  text-light">
+            <div class="d-flex justify-content-center mb-2 text-light">
                 <form onsubmit="app.ToDoController.makeToDo()">
                     <label for="">New to do:</label>
                     <input class="" required name="description" type="text">
@@ -23,5 +23,6 @@
             </div>
             <div class="d-flex flex-column" id="toDo-view"></div>
         </div>
+        <div class="col-4 cardStyle h-25 p-2 ms-4" id="quote-view"></div>
     </section>
 </section>
