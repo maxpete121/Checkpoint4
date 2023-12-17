@@ -1,12 +1,12 @@
 <section class="container-fluid">
-    <section class="row justify-content-center mb-4">
-        <div class="col-3 cardStyle me-4 text-light text-center d-flex justify-content-center align-items-center p-2">
+    <section class="row justify-content-center mb-md-4 m-2">
+        <div class="col-md-3 col-6 cardStyle me-md-4 m-2 text-light text-center d-flex justify-content-center align-items-center p-2">
             <h1 id="current-time">Time Loading...</h1>
         </div>
-        <div class="col-3 cardStyle ms-4" id="weather-view"></div>
+        <div class="col-md-3 col-10 cardStyle ms-md-4 m-2" id="weather-view"></div>
     </section>
     <section class="row justify-content-center">
-        <div class="col-4 cardStyle p-3 me-4">
+        <div class="col-md-4 col-10 cardStyle p-3 me-md-4 order-1 order-md-0">
             <div class="text-center text-light">
                 <h2>To do list</h2>
                 <div class="d-flex justify-content-center">
@@ -14,7 +14,7 @@
                     <h3 class="" id="list-count-view">Loading...</h3>
                 </div>
             </div>
-            <div class="d-flex justify-content-center mb-2 text-light">
+            <div class="d-flex justify-content-center mb-md-2 text-light">
                 <form onsubmit="app.ToDoController.makeToDo()">
                     <label for="">New to do:</label>
                     <input maxlength="36" required name="description" type="text">
@@ -24,6 +24,6 @@
             <div class="d-flex flex-column" id="toDo-view"></div>
             <div class="d-flex flex-column" id="finished-todo"></div>
         </div>
-        <div class="col-4 cardStyle h-25 p-2 ms-4" id="quote-view"></div>
+        <div class="col-md-4 col-10 order-0 order-md-1 mb-3 cardStyle h-25 p-2 ms-md-4" id="quote-view"></div>
     </section>
 </section>

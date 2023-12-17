@@ -13,14 +13,14 @@ function _drawToDo(){
     document.getElementById('toDo-view').innerHTML = content
 }
 
-function _drawFinished(){
-    if(AppState.FinishedToDo != undefined){
-        let finished = AppState.FinishedToDo
-        let content = ''
-        finished.forEach(todo => content += todo.toDoTemplate)
-        document.getElementById('finished-todo').innerHTML= content
-    }
-}
+// function _drawFinished(){
+//     if(AppState.FinishedToDo != undefined){
+//         let finished = AppState.FinishedToDo
+//         let content = ''
+//         finished.forEach(todo => content += todo.toDoTemplate)
+//         document.getElementById('finished-todo').innerHTML= content
+//     }
+// }
 
 export class ToDoController{
     constructor(){
@@ -28,7 +28,7 @@ export class ToDoController{
         AppState.on('user', this.getToDo)
         AppState.on('ToDos', this.toDoCount)
         AppState.on('ToDos', _drawToDo) 
-        AppState.on('FinishedToDo', _drawFinished)
+        // AppState.on('FinishedToDo', _drawFinished)
     }
 
     
