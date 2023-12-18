@@ -11,7 +11,7 @@ export class ToDoList{
 
     get toDoTemplate(){
         return`
-        <div style="background-color: ${this.toDoCompleteTemp};" class="d-flex justify-content-evenly mb-2 p-2">
+        <div style="background-color: ${this.toDoCompleteTemp};" class="d-flex justify-content-evenly mb-2 p-2 rounded-2">
         <div class="w-25">${this.description}</div>
         <button onclick="app.ToDoController.completeToDo('${this.id}')" class="btn btn-outline-dark">${this.toDoCompleteButton}</button>
         <button onclick="app.ToDoController.deleteToDo('${this.id}')" class="btn btn-outline-dark">Delete</button>
@@ -31,7 +31,7 @@ export class ToDoList{
         if(this.completed == true){
             return `Finished`
         }else if(this.completed == false){
-            return`Complete`
+            return`Finish`
         }
     }
 

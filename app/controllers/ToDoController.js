@@ -27,6 +27,7 @@ export class ToDoController{
         console.log('to do loaded')
         AppState.on('user', this.getToDo)
         AppState.on('ToDos', this.toDoCount)
+        AppState.on('ToDos', this.toDoCountDone)
         AppState.on('ToDos', _drawToDo) 
         // AppState.on('FinishedToDo', _drawFinished)
     }
@@ -58,6 +59,12 @@ export class ToDoController{
         let unfinished = AppState.ToDos.filter(todo => todo.completed == false)
         let count = unfinished.length
         document.getElementById('list-count-view').innerText = count
+    }
+
+    toDoCountDone(){
+        let finished = AppState.ToDos.filter(todo => todo.completed == true)
+        let count = finished.length
+        document.getElementById('list-done-view').innerText = count
     }
 
 }

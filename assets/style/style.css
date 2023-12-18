@@ -6,6 +6,11 @@ body {
 }
 
 
+.timeStyle {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.696);
+}
+
+
 .cardStyle {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.789);
@@ -23,3 +28,4 @@ body {
     opacity: 1;
     cursor: pointer;
 }
+
